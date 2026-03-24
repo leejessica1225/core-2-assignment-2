@@ -53,5 +53,42 @@
   <input type="text" placeholder="Search...">
   <button>Search</button>
 
+  </head>
+<body>
+
+  <h2>Image Slider</h2>
+
+  <button onclick="prev()">⬅️</button>
+
+  <img id="photo" src="https://picsum.photos/300/200?1">
+
+  <button onclick="next()">➡️</button>
+
+  <script>
+    let images = [
+      "https://picsum.photos/300/200?1",
+      "https://picsum.photos/300/200?2",
+      "https://picsum.photos/300/200?3"
+    ];
+
+    let index = 0;
+
+    function next() {
+      index++;
+      if (index > 2) {
+        index = 0;
+      }
+      document.getElementById("photo").src = images[index];
+    }
+
+    function prev() {
+      index--;
+      if (index < 0) {
+        index = 2;
+      }
+      document.getElementById("photo").src = images[index];
+    }
+  </script>
+
 </body>
 </html>
