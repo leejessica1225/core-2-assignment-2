@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Progress Example</title>
+</head>
+<body>
+
+<p>processing...</p>
+
+<progress id="bar" value="0" max="100"></progress>
+
+<script>
+  let progress = document.getElementById("bar");
+  let value = 0;
+
+  function fillBar() {
+    if (value < 100) {
+      value++;
+      progress.value = value;
+      setTimeout(fillBar, 30);
+    }
+  }
+
+  fillBar();
+</script>
+
+</body>
+</html>
